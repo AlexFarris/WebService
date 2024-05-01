@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aggiungi Nuovo Quiz</title>
+    <title>API Requests</title>
 </head>
 <body>
-    <h1>Aggiungi Nuovo Quiz</h1>
+    <h1>API Requests</h1>
+    
+    <!-- Aggiungi nuovo quiz -->
+    <h2>Aggiungi Nuovo Quiz</h2>
     <form id="addQuizForm">
         <label for="nome">Nome del Quiz:</label><br>
         <input type="text" id="nome" name="nome" value="Nuovo Quiz"><br>
@@ -39,6 +42,72 @@
         <button type="submit">Aggiungi Quiz</button>
     </form>
 
-    <script src="http://localhost/mafiaquiz-main/front%20end/script.js"></script>
+    <!-- Modifica un quiz -->
+    <h2>Modifica un Quiz</h2>
+    <form id="updateQuizForm">
+        <label for="idQuiz">ID del Quiz:</label><br>
+        <input type="number" id="idQuiz" name="idQuiz" value="1"><br>
+        <label for="newNome">Nuovo Nome:</label><br>
+        <input type="text" id="newNome" name="newNome" value="Nuovo Nome Quiz"><br>
+        <label for="newDescrizione">Nuova Descrizione:</label><br>
+        <textarea id="newDescrizione" name="newDescrizione">Nuova Descrizione del quiz</textarea><br>
+        <label for="newPunteggio">Nuovo Punteggio:</label><br>
+        <input type="number" id="newPunteggio" name="newPunteggio" value="150"><br>
+        <button type="button" onclick="updateQuiz()">Modifica Quiz</button>
+    </form>
+
+    <!-- Aggiungi una nuova domanda -->
+    <h2>Aggiungi una Nuova Domanda</h2>
+    <form id="addDomandaForm">
+        <label for="idQuizDomanda">ID del Quiz:</label><br>
+        <input type="number" id="idQuizDomanda" name="idQuizDomanda" value="1"><br>
+        <label for="newDomanda">Nuova Domanda:</label><br>
+        <input type="text" id="newDomanda" name="newDomanda" value="Nuova Domanda?"><br>
+        <label for="newRisposta">Nuova Risposta:</label><br>
+        <input type="text" id="newRisposta" name="newRisposta" value="Nuova Risposta"><br>
+        <label for="isCorretta">È Corretta? (1 o 0):</label><br>
+        <input type="number" id="isCorretta" name="isCorretta" value="1"><br>
+        <button type="button" onclick="addDomanda()">Aggiungi Domanda</button>
+    </form>
+
+    <!-- Modifica una domanda -->
+    <h2>Modifica una Domanda</h2>
+    <form id="updateDomandaForm">
+        <label for="idDomanda">ID della Domanda:</label><br>
+        <input type="number" id="idDomanda" name="idDomanda" value="1"><br>
+        <label for="newDomandaText">Nuova Domanda:</label><br>
+        <input type="text" id="newDomandaText" name="newDomandaText" value="Nuova Domanda?"><br>
+        <label for="newPunteggioDomanda">Nuovo Punteggio:</label><br>
+        <input type="number" id="newPunteggioDomanda" name="newPunteggioDomanda" value="10"><br>
+        <button type="button" onclick="updateDomanda()">Modifica Domanda</button>
+    </form>
+    <h2>Aggiungi una Nuova Risposta</h2>
+    <form id="addRispostaForm">
+        <label for="idDomandaRisposta">ID della Domanda:</label><br>
+        <input type="number" id="idDomandaRisposta" name="idDomandaRisposta" value="1"><br>
+        <label for="newRisposta">Nuova Risposta:</label><br>
+        <input type="text" id="newRisposta" name="newRisposta" value="Nuova Risposta"><br>
+        <label for="isCorrettaRisposta">È Corretta? (1 o 0):</label><br>
+        <input type="number" id="isCorrettaRisposta" name="isCorrettaRisposta" value="1"><br>
+        <button type="button" onclick="addRisposta()">Aggiungi Risposta</button>
+    </form>
+
+    <!-- Modifica una risposta -->
+    <h2>Modifica una Risposta</h2>
+    <form id="updateRispostaForm">
+        <label for="idRisposta">ID della Risposta:</label><br>
+        <input type="number" id="idRisposta" name="idRisposta" value="1"><br>
+        <label for="newRispostaText">Nuova Risposta:</label><br>
+        <input type="text" id="newRispostaText" name="newRispostaText" value="Nuova Risposta?"><br>
+        <label for="isCorrettaRispostaUpdate">È Corretta? (1 o 0):</label><br>
+        <input type="number" id="isCorrettaRispostaUpdate" name="isCorrettaRispostaUpdate" value="1"><br>
+        <button type="button" onclick="updateRisposta()">Modifica Risposta</button>
+    </form>
+    <!-- Elimina un quiz -->
+    <h2>Elimina un Quiz</h2>
+    <form id="deleteQuizForm">
+        <label for="idQuizDelete">ID del Quiz:</label><br>
+        <input type="number" id="idQuizDelete" name="idQuizDelete" value="1"><br>
+        <button type="button" onclick="deleteQuiz()">Elimina Quiz</button>
+    </form> 
 </body>
-</html>
