@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aggiungi Nuovo Quiz</title>
+</head>
+<body>
+    <h1>Aggiungi Nuovo Quiz</h1>
+    <form id="addQuizForm">
+        <label for="nome">Nome del Quiz:</label><br>
+        <input type="text" id="nome" name="nome" value="Nuovo Quiz"><br>
+        <label for="descrizione">Descrizione:</label><br>
+        <textarea id="descrizione" name="descrizione">Descrizione del nuovo quiz</textarea><br>
+        <label for="punteggio">Punteggio:</label><br>
+        <input type="number" id="punteggio" name="punteggio" value="100"><br>
+        
+        <label for="domanda1">Domanda 1:</label><br>
+        <input type="text" id="domanda1" name="domanda1" value="Prima domanda?"><br>
+        <input type="radio" id="vero1" name="risposta1" value="vero" checked>
+        <label for="vero1">Vero</label>
+        <input type="radio" id="falso1" name="risposta1" value="falso">
+        <label for="falso1">Falso</label><br>
+        
+        <label for="domanda2">Domanda 2:</label><br>
+        <input type="text" id="domanda2" name="domanda2" value="Seconda domanda?"><br>
+        <input type="radio" id="vero2" name="risposta2" value="vero" checked>
+        <label for="vero2">Vero</label>
+        <input type="radio" id="falso2" name="risposta2" value="falso">
+        <label for="falso2">Falso</label><br>
+        
+        <label for="domanda3">Domanda 3:</label><br>
+        <input type="text" id="domanda3" name="domanda3" value="Terza domanda?"><br>
+        <input type="radio" id="vero3" name="risposta3" value="vero" checked>
+        <label for="vero3">Vero</label>
+        <input type="radio" id="falso3" name="risposta3" value="falso">
+        <label for="falso3">Falso</label><br>
+        
+        <button type="submit">Aggiungi Quiz</button>
+    </form>
+
+    <script src="http://localhost/mafiaquiz-main/front%20end/script.js"></script>
+</body>
+</html>
