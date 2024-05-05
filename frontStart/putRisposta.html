@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Risposta</title>
+</head>
+<body>
+
+<h2>Modulo Risposta</h2>
+
+<form id="rispostaForm">
+    <label for="idDomanda">ID Domanda:</label><br>
+    <input type="text" id="idDomanda" name="idDomanda"><br>
+    <label for="risposta">Risposta:</label><br>
+    <input type="text" id="risposta" name="risposta"><br>
+    <label for="corretta">Corretta (0 o 1):</label><br>
+    <input type="text" id="corretta" name="corretta"><br><br>
+    <button type="submit">Invia Risposta</button>
+</form>
+
+<script>
+document.getElementById('rispostaForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const idDomanda = document.getElementById('idDomanda').value;
+    const risposta = document.getElementById('risposta').value;
+    const corretta = document.getElementById('corretta').value;
+
+    inviaRisposta(idDomanda, risposta, corretta);
+});
+
+function inviaRisposta(idDomanda, risposta, corretta) {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const body = JSON.stringify({
+        "id_domanda": idDomanda,
+        "risposta": risposta,
+        "corretta": corretta
+    });
+
+    const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: body,
+        redirect: "follow"
+    };
+
+    fetch("https://baroniadelaide.alwaysdata.net/risposta", requestOptions)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Errore durante la richiesta.');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Risposta ricevuta:", data);
+            alert("Risposta inviata con successo!");
+        })
+        .catch(error => {
+            console.error("Errore durante la richiesta:", error);
+            alert("Si è verificato un errore durante l'invio della risposta.");
+        });
+}
+</script>
+
+</body>
+</html>
